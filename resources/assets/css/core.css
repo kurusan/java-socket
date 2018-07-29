@@ -1,0 +1,75 @@
+/*
+	Application : Banking application CSS ;
+	Author : Kurusan;
+*/
+
+/* General application color variables configuration*/
+*	{
+	-fx-primary : #2A2E37;
+	-fx-secondary : #FFFF8D;
+	-fx-primarytext : #B2B2B2;
+	-fx-red : #FF9800;
+}
+
+/* Main application color */
+.root	{
+	-fx-background-color : -fx-primary ;
+}
+
+/* Main application icons color */
+.glyph-icon {
+	-fx-fill : -fx-primarytext;
+}
+
+/* Icon color for settings when mouse hover */
+.glyph-icon-cogs:hover {
+	-fx-fill : -fx-secondary;
+}
+
+
+/* General Buttons text color */
+.button {
+	-fx-text-fill : -fx-primarytext;
+}
+
+/* General Buttons color */
+.login-button {
+	-fx-border-color : -fx-secondary;
+	-fx-border-radius  : 20px;
+	-fx-background-radius : 20px;
+}
+
+
+/* Buttons color when mouse hover */
+.login-button:hover {
+	-fx-border-color : -fx-secondary;
+	-fx-background-color : -fx-secondary;
+	-fx-text-fill : -fx-primarytext;
+}
+
+
+/* TextField content text CSS */
+.text-field {
+	-fx-text-fill : -fx-primarytext;
+	-fx-font-size : 13px;
+	-jfx-focus-color : -fx-secondary;
+}
+
+
+/* General label color and size*/
+.text-label {
+	-fx-text-fill : -fx-primarytext;
+	-fx-font-size : 20px;
+}
+
+/* TextField sub-color when wrong credential is given */
+.wrong-credentials {
+	-jfx-unfocus-color : -fx-red;
+	-jfx-focus-color : -fx-red;
+}
+
+/* Main css styling*/
+.tab {
+	-fx-pref-width : 350;
+	-fx-pref-height : 60;
+}
