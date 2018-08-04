@@ -1,14 +1,11 @@
 package com.bank.controllers;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
-import org.apache.commons.codec.digest.DigestUtils;
 
 import com.bank.logic.auth.User;
-import com.bank.server.Log;
 import com.bank.server.ProvidedServices;
 import com.bank.util.WindowLoader;
 
@@ -47,7 +44,7 @@ public class AuthController implements Initializable {
 		
 		if(isAuth(login, password)) {
 			((Stage)loginTextField.getScene().getWindow()).close();
-			loadMain();
+			WindowLoader.getWindow().loadMain();
 		}
 		else {
 			loginTextField.getStyleClass().add("wrong-credentials");
@@ -62,25 +59,7 @@ public class AuthController implements Initializable {
 	
 	@FXML
 	public void settingsListener(MouseEvent event){
-		loadSettings();
-	}
-	
-	void loadMain() {
-		try {
-			WindowLoader.getWindow().load("/com/bank/views/settings.fxml", "Paramètre");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	void loadSettings(){
-		try {
-			WindowLoader.getWindow().load("/com/bank/views/settings.fxml", "Paramètre");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		WindowLoader.getWindow().loadSettings();
 	}
 	
 	public boolean isAuth(String login, String password) {

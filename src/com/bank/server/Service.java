@@ -37,10 +37,19 @@ public class Service extends Thread{
 				// Deserialization to get string object which contain called method name.
 				 call = (String)(SerializationClass.deSerialization(socket));
 				 
-				 /*
-				  * Beginning of create method test
-				  */
-				if(call.equals("createAgency")){
+				 
+				/*
+				 * Auth Request
+				 */
+				if(call.equals("auth")){
+					SerializationClass.serialization(socket,ProvidedServices.auth(
+							(String)SerializationClass.deSerialization(socket),
+							(String)SerializationClass.deSerialization(socket)));
+				}
+				/*
+				 * Beginning of create method test
+				 */
+				else if(call.equals("createAgency")){
 					// Deserialization to get agency object.
 					ProvidedServices.createAgency((Agency)SerializationClass.deSerialization(socket));
 				}
@@ -81,6 +90,14 @@ public class Service extends Thread{
 				}
 				else if(call.equals("getCustomersByAgency")){
 					SerializationClass.serialization(socket, ProvidedServices.getCustomersByAgency(
+							(String)SerializationClass.deSerialization(socket)));
+				}
+				else if(call.equals("getAgencyByID")){
+					SerializationClass.serialization(socket, ProvidedServices.getAgencyByID(
+							(String)SerializationClass.deSerialization(socket)));
+				}
+				else if(call.equals("getAgencyByName")){
+					SerializationClass.serialization(socket, ProvidedServices.getAgencyByName(
 							(String)SerializationClass.deSerialization(socket)));
 				}
 				else if(call.equals("getAccountsByCustomer")){

@@ -10,7 +10,7 @@ import javafx.stage.StageStyle;
 
 public class WindowLoader {
 	
-	public void load(String location, String title) throws IOException {
+	private void load(String location, String title) throws IOException {
 		Parent parent = FXMLLoader.load(getClass().getResource(location)); 
 		Stage stage = new Stage(StageStyle.DECORATED);
 	    Scene scene = new Scene(parent);
@@ -23,5 +23,58 @@ public class WindowLoader {
 	public static WindowLoader getWindow() {
 		return new WindowLoader();
 	}
-
+	
+	public void loadMain() {
+		try {
+			load("/com/bank/views/main.fxml", "Serveur - Pannel d'administration");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void loadSettings(){
+		try {
+			load("/com/bank/views/settings.fxml", "Serveur - Settings");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void loadUser() {
+		try {
+			load("/com/bank/views/user.fxml", "Serveur - Ajouter utilisateur");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void loadSignIn() {
+		try {
+			load("/com/bank/views/auth/signin.fxml", "Serveur - Se connecter");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void loadHelp() {
+		try {
+			load("/com/bank/views/help.fxml", "Serveur - Aide");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void loadLogs() {
+		try {
+			load("/com/bank/views/help.fxml", "Serveur - Aide");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

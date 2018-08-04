@@ -26,7 +26,6 @@
 	-fx-fill : -fx-secondary;
 }
 
-
 /* General Buttons text color */
 .button {
 	-fx-text-fill : -fx-primarytext;
@@ -70,6 +69,43 @@
 
 /* Main css styling*/
 .tab {
-	-fx-pref-width : 350;
-	-fx-pref-height : 60;
+	-fx-pref-width : 200;
+	-fx-pref-height : 40;
+	-fx-text-fill : -fx-primarytext;
+}
+
+.tab-label {
+    -fx-text-fill: -fx-primarytext;
+}
+
+.tab-header-background {
+    -fx-background-color : -fx-primary;
+    -fx-text-fill : -fx-primarytext;
+}
+
+.menu-bar {
+	-fx-base : fx-primary;
+	-fx-background-color : -fx-primary;
+	-fx-text-fill : -fx-primarytext;
+}
+
+.menu .label{
+  -fx-text-fill : -fx-primarytext;
+}
+
+.menu-item .label{
+  -fx-text-fill : -fx-primarytext;
+}
+
+.context-menu {
+	-fx-background-color : derive(-fx-primary, 20%);
+}
+
+.jfx-hamburger-icon{
+	-fx-spacing: 7;
+}
+
+.jfx-hamburger-icon StackPane {
+	-fx-background-color : -fx-secondary;
+	-fx-background-radius : 5px;
 }

@@ -25,7 +25,6 @@ public class Server {
 	        while(connected){
 	        	Socket socket = serverSocket.accept();
 	            inetAddress = socket.getInetAddress();
-	            
 	            Service service = new Service(socket);
 	            service.start();
 	            countHost();       
@@ -41,8 +40,8 @@ public class Server {
 		return count++;
 	}
 	
-	public InetAddress getInetAddress(){
-		return this.inetAddress;
+	public String getInetAddress(){
+		return this.inetAddress.toString();
 	}
 
 }

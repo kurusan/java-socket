@@ -23,6 +23,7 @@ public class SerializationClass {
 	 * @throws ClassNotFoundException
 	 */
 	public static Object deSerialization(Socket socket) throws IOException, ClassNotFoundException {
+		System.out.println("7777");
 		objectInputStream = new ObjectInputStream(socket.getInputStream());		
         Object object = objectInputStream.readObject();
 		return object;
@@ -35,7 +36,6 @@ public class SerializationClass {
 	 * @throws IOException
 	 */
 	public static void serialization(Socket socket, Object object) throws IOException {
-		System.out.println("3333");
 		objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
 		objectOutputStream.writeObject(object);
 		objectOutputStream.flush();

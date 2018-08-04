@@ -19,6 +19,12 @@ public class User implements Serializable {
 		this.hasAdmin(isAdmin);
 	}
 	
+	public User(String login, String password, boolean isAdmin) {
+		this.setLogin(login);
+		this.setPassword(password);
+		this.hasAdmin(isAdmin);
+	}
+	
 	public int getID() {
 		return this.ID;
 	}
